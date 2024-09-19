@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-/* Reset and Basic Styling */
+        /* Reset and Basic Styling */
 * {
     margin: 0;
     padding: 0;
@@ -16,180 +16,311 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #FFFFFF; /* White background for minimalism */
-    color: #333333; /* Dark gray text for readability */
+    background-color: #FFFFFF;
+    color: #333333;
     line-height: 1.6;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 a {
-    color: #3A86FF; /* Accent color for links */
+    color: #008080;
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
-}
 
 /* Container */
 .container {
-    max-width: 800px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 0 2rem;
 }
 
-/* Header */
-.header {
+/* Navigation */
+.navbar {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E0E0E0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #000000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links li a {
+    font-weight: 600;
+    color: #666666;
+}
+
+.nav-links li a:hover {
+    color: #000000;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+.hero-content {
     text-align: center;
-    padding: 4rem 0;
+    margin-top: -60px;
 }
 
-.header h1 {
-    font-size: 2.5rem;
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 3px solid #E0E0E0;
+}
+
+.hero h1 {
+    font-size: 3rem;
     font-weight: 800;
     margin-bottom: 1rem;
-    color: #000000; /* Black for main heading */
+    color: #000000;
 }
 
-.header h2 {
-    font-size: 1.5rem;
+.hero h2 {
+    font-size: 1.75rem;
     font-weight: 600;
-    color: #666666; /* Dark gray for subheading */
+    color: #666666;
     margin-bottom: 2rem;
 }
 
 .intro {
-    font-size: 1rem;
-    color: #555555; /* Medium gray for intro text */
-    max-width: 600px;
+    font-size: 1.1rem;
+    color: #555555;
+    max-width: 700px;
     margin: 0 auto 2rem;
 }
 
 .button {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #3A86FF; /* Accent color */
+    padding: 0.75rem 2rem;
+    background-color: #008080;
     color: #FFFFFF;
     border-radius: 30px;
     transition: background-color 0.3s ease;
     font-weight: 600;
-    margin-top: 1rem;
 }
 
 .button:hover {
-    background-color: #3366CC; /* Darker shade on hover */
-}
-
-/* Profile Photo */
-.profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1.5rem;
-    border: 2px solid #E0E0E0;
+    background-color: #708090;
 }
 
 /* Sections */
 section {
-    margin-bottom: 4rem;
+    padding: 4rem 0;
 }
 
 section h2 {
-    font-size: 1.75rem;
+    font-size: 2rem;
     font-weight: 800;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     text-align: center;
     color: #000000;
 }
 
-/* Skills */
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 2rem;
 }
 
-.skill-item {
+.skill-category {
     background-color: #F9F9F9;
-    padding: 1rem 1.5rem;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    color: #333333;
+    padding: 1.5rem;
+    border-radius: 8px;
     border: 1px solid #E0E0E0;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #000000;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category ul li {
+    font-size: 1rem;
+    color: #555555;
+    margin-bottom: 0.5rem;
+}
+
+.skill-category ul li::before {
+    content: "•";
+    color: #008080; /* Accent color */
+    margin-right: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+}
+
+
+
 
 /* Projects */
 .project-item {
-    background-color: #F9F9F9;
-    padding: 2rem;
-    border-radius: 8px;
     margin-bottom: 2rem;
-    transition: transform 0.3s ease;
-    border: 1px solid #E0E0E0;
 }
 
-.project-item:hover {
-    transform: translateY(-5px);
+.project-item a {
+    text-decoration: none;
 }
 
 .project-title {
     font-size: 1.5rem;
     font-weight: 800;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     color: #000000;
 }
 
 .project-description {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: #555555;
-    line-height: 1.5;
+    line-height: 1.6;
+}
+
+.project-item:hover .project-title {
+    color: #008080;
 }
 
 /* Experience */
 .experience-item {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .experience-item h3 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 800;
-    color: #3A86FF; /* Accent color */
+    color: #000000;
     margin-bottom: 0.5rem;
 }
 
-.experience-item p {
+.experience-duration {
     font-size: 0.9rem;
-    color: #555555;
-    line-height: 1.5;
+    color: #777777;
+    margin-bottom: 1rem;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 2rem 0;
-    border-top: 1px solid #E0E0E0;
-    font-size: 0.85rem;
+.experience-details {
+    list-style: disc inside;
+    font-size: 1rem;
+    color: #555555;
+    line-height: 1.6;
+}
+
+.experience-details li {
+    margin-bottom: 0.5rem;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #F9F9F9;
+    padding: 4rem 0;
+}
+
+.contact-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.contact-links a:hover {
+    color: #708090;
+}
+
+.contact-links li a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #008080;
+}
+
+.footer-text {
+    font-size: 0.9rem;
     color: #777777;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .header h1 {
-        font-size: 2rem;
+    .navbar .nav-links {
+        display: none;
     }
-    .header h2 {
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .intro {
+        font-size: 1rem;
+    }
+
+    .profile-photo {
+        width: 140px;
+        height: 140px;
+    }
+
+    .experience-item h3 {
         font-size: 1.25rem;
     }
-    .intro {
-        font-size: 0.9rem;
-    }
+
     .project-title {
         font-size: 1.25rem;
     }
-    .profile-photo {
-        width: 120px;
-        height: 120px;
+
+    .contact-links {
+        flex-direction: column;
+        gap: 1rem;
     }
 }
 
@@ -197,106 +328,173 @@ footer {
 </head>
 <body>
 
-    <div class="container">
-        <!-- Header Section -->
-<!-- Header Section -->
-<header class="header">
-    <img src="data_lu.png" alt="Photo of Łukasz Grzywacz" class="profile-photo">
-    <h1>Łukasz Grzywacz</h1>
-    <h2>Data Analyst</h2>
-    <p class="intro">I am a passionate Data Analyst specializing in building scalable data automations and systems that transform raw data into valuable insights. With expertise in modern data technologies, I help organizations make data usable.</p>
-    <a href="#contact" class="button">Get in Touch</a>
-</header>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">ŁG</a>
+            <ul class="nav-links">
+                <li><a href="https://lukasz-grzywacz.medium.com" target="_blank">Blog</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>Key Skills</h2>
-            <div class="skills-list">
-                <div class="skill-item">SSIS, SSRS, Azure Data Factory</div>
-                <div class="skill-item">Python, SQL</div>
-                <div class="skill-item">Power BI, Excel, Power Query</div>
-                <div class="skill-item">Azure, Snowflake</div>
-                <div class="skill-item">SQL Server, MySQL</div>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="data_lu.jpeg" alt="Photo of Łukasz Grzywacz" class="profile-photo">
+                <h1>Łukasz Grzywacz</h1>
+                <h2>Data Analyst</h2>
+                <p class="intro">I am a passionate Data Analyst specializing in building scalable data automations and systems that transform raw data into valuable insights. With expertise in modern data technologies, I help organizations make data usable.</p>
+                <a href="#contact" class="button">Get in Touch</a>
             </div>
-        </section>
+        </div>
+    </header>
 
-        <!-- Projects Section -->
-        <section id="projects">
+<!-- Skills Section -->
+<section id="skills">
+    <div class="container">
+        <h2>Key Skills</h2>
+        <div class="skills-grid">
+
+            <!-- Programming Languages -->
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+
+            <!-- Data Integration Tools -->
+            <div class="skill-category">
+                <h3>Data Integration Tools</h3>
+                <ul>
+                    <li>SSIS</li>
+                    <li>SSRS</li>
+                    <li>Azure Data Factory</li>
+                </ul>
+            </div>
+
+            <!-- Data Analysis & Reporting -->
+            <div class="skill-category">
+                <h3>Data Analysis & Reporting</h3>
+                <ul>
+                    <li>Power BI</li>
+                    <li>Excel</li>
+                    <li>Power Query</li>
+                </ul>
+            </div>
+
+            <!-- Databases & Cloud Platforms -->
+            <div class="skill-category">
+                <h3>Databases & Cloud Platforms</h3>
+                <ul>
+                    <li>SQL Server</li>
+                    <li>MySQL</li>
+                    <li>Azure</li>
+                    <li>Snowflake</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
             <h2>Selected Projects</h2>
-            
+
             <div class="project-item">
                 <a href="https://notes-portal-5b1f1c5bb96c.herokuapp.com" target="_blank">
-                    <div class="project-title">Notes Portal – eBook Annotations Importer</div>
-                    <div class="project-description">
+                    <h3 class="project-title">Notes Portal – eBook Annotations Importer</h3>
+                    <p class="project-description">
                         Developed a web app using Python, Flask, SQLite, and Heroku. Features include login/signup, EPUB file conversion, and integration with Notion via API.
-                    </div>
+                    </p>
                 </a>
             </div>
-            
+
             <div class="project-item">
                 <a href="https://github.com/xluki3/PortfolioProjects/tree/main/Kaggle-PY-Snowflake-Project-Github" target="_blank">
-                    <div class="project-title">Kaggle to Snowflake – ETL Process</div>
-                    <div class="project-description">
+                    <h3 class="project-title">Kaggle to Snowflake – ETL Process</h3>
+                    <p class="project-description">
                         Designed an ETL process with Python to extract data from Kaggle API, load it into Snowflake Cloud, and perform data analysis using Pandas, Matplotlib, Sklearn, and Numpy.
-                    </div>
+                    </p>
                 </a>
             </div>
-            
+
             <div class="project-item">
                 <a href="https://medium.com/@datatechflow" target="_blank">
-                    <div class="project-title">DataTechFlow – Medium Blog</div>
-                    <div class="project-description">
+                    <h3 class="project-title">Medium Blog</h3>
+                    <p class="project-description">
                         Launched a blog sharing news and tips on data, AI, technology, and productivity.
-                    </div>
+                    </p>
                 </a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Experience Section -->
-        <section id="experience">
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
             <h2>Professional Experience</h2>
 
             <div class="experience-item">
                 <h3>Analyst | Smartney Grupa Oney S.A.</h3>
-                <p><em>May 2023 - Present</em></p>
-                <p>
-                    <strong>Automated Processes:</strong> Streamlined 50+ controls using Excel, Power Query, and SQL, cutting down control time by 70%.<br>
-                    <strong>SQL Reporting:</strong> Introduced automated SQL job mail reporting, significantly reducing manual workload.<br>
-                    <strong>Dashboard Development:</strong> Built 4 automated dashboards with Excel, Power BI, and SQL, slashing report preparation time.<br>
-                    <strong>Training & Mentorship:</strong> Provided SQL training to 15 employees, enhancing team skills and efficiency.
-                </p>
+                <p class="experience-duration"><em>May 2023 - Present</em></p>
+                <ul class="experience-details">
+                    <li><strong>Automated Processes:</strong> Streamlined 50+ controls using Excel, Power Query, and SQL, cutting down control time by 70%.</li>
+                    <li><strong>SQL Reporting:</strong> Introduced automated SQL job mail reporting, significantly reducing manual workload.</li>
+                    <li><strong>Dashboard Development:</strong> Built 4 automated dashboards with Excel, Power BI, and SQL, slashing report preparation time.</li>
+                    <li><strong>Training & Mentorship:</strong> Provided SQL training to 15 employees, enhancing team skills and efficiency.</li>
+                </ul>
             </div>
 
             <div class="experience-item">
                 <h3>Junior SQL Developer | LINK GROUP Sp. z o.o.</h3>
-                <p><em>May 2024 - September 2024</em></p>
-                <p>
-                    <strong>Data Mapping & Extraction:</strong> Mapped and extracted data efficiently.<br>
-                    <strong>ETL Processes:</strong> Managed Extract, Transform, Load processes.<br>
-                    <strong>Data Warehousing:</strong> Handled data warehousing tasks effectively.<br>
-                    <strong>SQL & Database Management:</strong> Proficient in SQL and database management.<br>
-                    <strong>Reporting & Data Visualization:</strong> Created reports using Power BI and Excel.<br>
-                    <strong>Process Automation:</strong> Automated processes to improve efficiency.
-                </p>
+                <p class="experience-duration"><em>May 2024 - September 2024</em></p>
+                <ul class="experience-details">
+                    <li><strong>Data Mapping & Extraction:</strong> Mapped and extracted data efficiently.</li>
+                    <li><strong>ETL Processes:</strong> Managed Extract, Transform, Load processes.</li>
+                    <li><strong>Data Warehousing:</strong> Handled data warehousing tasks effectively.</li>
+                    <li><strong>SQL & Database Management:</strong> Proficient in SQL and database management.</li>
+                    <li><strong>Reporting & Data Visualization:</strong> Created reports using Power BI and Excel.</li>
+                    <li><strong>Process Automation:</strong> Automated processes to improve efficiency.</li>
+                </ul>
             </div>
 
             <div class="experience-item">
                 <h3>SQL Developer | CETES Cosmetics Poland Sp. z o.o.</h3>
-                <p><em>August 2022 - Present</em></p>
-                <p>
-                    <strong>Efficiency Projects:</strong> Developed SQL-based solutions that improved operational efficiency.<br>
-                    <strong>Database Management:</strong> Created 100+ stored procedures/functions and designed multiple database schemas from scratch.<br>
-                    <strong>Legal Compliance:</strong> Generated XML files using SQL for regulatory compliance.<br>
-                    <strong>Automation:</strong> Developed a Python-based tool for automating PDF document conversion.
-                </p>
+                <p class="experience-duration"><em>August 2022 - Present</em></p>
+                <ul class="experience-details">
+                    <li><strong>Efficiency Projects:</strong> Developed SQL-based solutions that improved operational efficiency.</li>
+                    <li><strong>Database Management:</strong> Created 100+ stored procedures/functions and designed multiple database schemas from scratch.</li>
+                    <li><strong>Legal Compliance:</strong> Generated XML files using SQL for regulatory compliance.</li>
+                    <li><strong>Automation:</strong> Developed a Python-based tool for automating PDF document conversion.</li>
+                </ul>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Footer Section -->
-        <footer id="contact">
-            <p>Connect with me on <a href="https://www.linkedin.com/in/lukasz-grzywacz-in/" target="_blank">LinkedIn</a> | <a href="mailto:lukaszgrzywaczcontact@gmail.com">Email Me</a> | <a href="https://github.com/xluki3/PortfolioProjects" target="_blank">GitHub</a></p>
-        </footer>
-    </div>
+    <!-- Footer Section -->
+    <footer id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>You can reach me through the following platforms:</p>
+            <ul class="contact-links">
+                <li><a href="https://www.linkedin.com/in/lukasz-grzywacz-in/" target="_blank">LinkedIn</a></li>
+                <li><a href="mailto:lukaszgrzywaczcontact@gmail.com">Email</a></li>
+                <li><a href="https://github.com/xluki3/PortfolioProjects" target="_blank">GitHub</a></li>
+            </ul>
+            <p class="footer-text">&copy; 2024 Łukasz Grzywacz. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
