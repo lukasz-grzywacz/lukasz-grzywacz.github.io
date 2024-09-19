@@ -6,6 +6,8 @@
     <title>Łukasz Grzywacz | Data Analyst</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
     <style>
         /* Reset and Basic Styling */
 * {
@@ -56,10 +58,22 @@ a {
     height: 60px;
 }
 
+/* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center;       /* Vertically centers the logo */
+}
+
+/* Logo Image */
 .logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #000000;
+    height: 60px;              /* Adjust the height as needed */
+    width: auto;               /* Maintains aspect ratio */
+}
+
+@media (max-width: 768px) {
+    .logo {
+        height: 40px; /* Smaller logo on smaller screens */
+    }
 }
 
 .nav-links {
@@ -329,18 +343,21 @@ section h2 {
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">ŁG</a>
-            <ul class="nav-links">
-                <li><a href="https://lukasz-grzywacz.medium.com" target="_blank">Blog</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="container">
+        <div class="logo-container">
+            <a href="#"><img src="logo.svg" alt="ŁG Logo" class="logo"></a>
         </div>
-    </nav>
+        <ul class="nav-links">
+            <li><a href="https://lukasz-grzywacz.medium.com" target="_blank">Blog</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <header class="hero">
@@ -372,7 +389,7 @@ section h2 {
 
             <!-- Data Integration Tools -->
             <div class="skill-category">
-                <h3>Data Integration Tools</h3>
+                <h3>Data Integration Tools</h3>                       
                 <ul>
                     <li>SSIS</li>
                     <li>SSRS</li>
